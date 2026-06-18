@@ -272,19 +272,144 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
 /* Insight: growth note box */
 .insight-note { font-size:12px; color:#6b7280; margin-top:12px; padding:10px 14px; background:#f9fafb; border-radius:6px; }
 
-/* Mobile */
-@media (max-width:640px) {
-  .kpi-grid { grid-template-columns:1fr 1fr; }
-  .report-grid { grid-template-columns:1fr; }
-  .tree-cols { font-size:10px; }
-  .tree-row { font-size:12px; }
-  .tree-row .col-num, .tree-row .col-rate { width:44px; }
+/* ============================================= */
+/* MOBILE — 平板/中等手机 (max-width: 768px)        */
+/* ============================================= */
+@media (max-width:768px) {
+  .container { padding:0 12px; }
+  
+  /* Header */
+  .header { padding:14px 12px; }
+  .header h1 { font-size:17px; }
+  .header .meta { font-size:11px; }
+  .badge-row { gap:6px; }
+  .badge { font-size:10px; padding:2px 8px; }
+
+  /* Tabs */
+  .tabs { gap:0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .tab-btn { font-size:13px; padding:12px 10px; white-space:nowrap; flex-shrink:0; }
+  
+  /* KPI cards — 2列 */
+  .kpi-row { grid-template-columns:1fr 1fr; gap:8px; }
+  .kpi-card { padding:12px; }
+  .kpi-card .kpi-value { font-size:24px; }
+  .kpi-card .kpi-label { font-size:11px; }
+  .kpi-card .kpi-sub { font-size:11px; }
+
+  /* Type cards */
+  .type-cards { grid-template-columns:1fr 1fr; gap:8px; }
+  .type-card { padding:12px; }
+  .type-card .tc-value { font-size:20px; }
+
+  /* Chart */
+  .chart-wrap { padding:12px; }
+  .section-title { font-size:14px; margin:16px 0 10px; }
+
+  /* Warning list */
+  .warn-item { padding:10px 12px; }
+  .warn-item .warn-name { font-size:13px; }
+  .warn-item .warn-gap { font-size:14px; width:60px; }
+  .warn-item .warn-rate { width:48px; font-size:11px; }
+  .warn-header .wh-gap { width:60px; }
+  .warn-header .wh-rate { width:48px; }
+
+  /* Tree */
+  .tree-header { padding:10px 12px; }
+  .tree-header .node-name { font-size:13px; }
+  .tree-cols { font-size:10px; padding:6px 12px; }
+  .tree-row { font-size:12px; padding:8px 12px; }
+  .tree-row .col-name { font-size:12px; }
+  .tree-row .col-num, .tree-row .col-rate { width:42px; }
   .tree-row .col-gap { width:48px; }
   .tree-row .col-target, .tree-row .col-gap2 { display:none; }
   .tree-cols span.col-target, .tree-cols span.col-gap2 { display:none; }
   .tree-header .node-stats { display:none; }
-  .header h1 { font-size:16px; }
-  .tab-btn { font-size:12px; padding:12px 6px; }
+  .tree-children .tree-node { margin-left:16px; }
+
+  /* Report cards */
+  .report-grid { grid-template-columns:1fr; gap:12px; }
+  .report-card-header { padding:12px; }
+  .report-card-header .rc-name { font-size:14px; }
+  .report-card-data { padding:10px 12px; grid-template-columns:1fr 1fr; gap:6px; }
+  .report-card-data .rd-val { font-size:17px; }
+  .report-card-keywords { padding:8px 12px; }
+  .report-card-keywords .kw-tag { font-size:11px; }
+
+  /* Detail popup */
+  .detail-popup { width:92vw; max-height:80vh; }
+  .detail-popup-header { padding:16px; }
+  .detail-popup-header .dp-name { font-size:16px; }
+  .detail-popup-body { padding:16px; }
+  .detail-popup-body td { font-size:12px; padding:8px 10px; }
+
+  /* Insight sections */
+  .growth-band-row .gb-label { width:80px; font-size:11px; }
+  .growth-band-row .gb-companies { padding-left:88px; font-size:11px; }
+  .area-rank-table { font-size:12px; }
+  .area-rank-table th, .area-rank-table td { padding:8px; }
+  .status-legend { font-size:11px; gap:8px; }
+
+  /* Risk + Action cards */
+  .risk-card, .action-item { padding:12px; }
+  .risk-card .risk-title { font-size:14px; }
+  .risk-card .risk-desc { font-size:12px; }
+  .action-item .ai-action { font-size:13px; }
+  .action-item .ai-detail { font-size:11px; }
+}
+
+/* ============================================= */
+/* MOBILE — 小屏手机 (max-width: 480px)           */
+/* ============================================= */
+@media (max-width:480px) {
+  .container { padding:0 8px; }
+
+  /* Header */
+  .header { padding:10px 8px; flex-direction:column; gap:6px; }
+  .header h1 { font-size:15px; }
+  .header .badge-row { justify-content:flex-start; }
+
+  /* Tabs — compact */
+  .tabs { padding:0; }
+  .tab-btn { font-size:11px; padding:10px 8px; }
+  .tab-btn .tab-icon { font-size:14px; }
+
+  /* KPI — 单列 */
+  .kpi-row { grid-template-columns:1fr; gap:8px; }
+  .kpi-card { padding:10px 12px; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; }
+  .kpi-card .kpi-label { width:100%; margin-bottom:0; }
+  .kpi-card .kpi-value { font-size:22px; }
+  .kpi-card .kpi-sub { width:100%; margin-top:0; }
+
+  /* Type cards */
+  .type-cards { grid-template-columns:1fr 1fr; gap:6px; }
+
+  /* Chart */
+  .chart-wrap { padding:8px; }
+  .chart-header { flex-direction:column; align-items:flex-start; }
+
+  /* Warning list */
+  .warn-header, .warn-item { padding:8px 10px; gap:8px; }
+  .warn-item .warn-area { display:none; }
+
+  /* Tree — further compress */
+  .tree-cols { font-size:9px; padding:4px 8px; }
+  .tree-row { font-size:11px; padding:6px 8px; }
+  .tree-row .col-status { width:44px; }
+  .tree-row .col-gap { width:42px; }
+  .tree-children .tree-node { margin-left:8px; }
+
+  /* Reports */
+  .report-card-data { grid-template-columns:1fr 1fr; gap:4px; }
+
+  /* Insight */
+  .area-rank-table th:nth-child(3),
+  .area-rank-table td:nth-child(3) { display:none; }
+
+  /* Action items */
+  .action-item { flex-direction:column; gap:8px; }
+  
+  /* Detail popup */
+  .detail-popup { width:95vw; border-radius:8px; }
 }
 </style>
 <script>
@@ -1188,4 +1313,3 @@ init();
 </script>
 </body>
 </html>
-
